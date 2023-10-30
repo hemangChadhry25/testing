@@ -1,0 +1,271 @@
+[
+  {
+    "id": "57ohbb5hhs5",
+    "triggerId": "123456789",
+    "name": "select EndPoint",
+    "shortDescription": "here you have to select the endpoint",
+    "eventCategory": "category",
+    "eventSource": "source api for the event",
+    "specificEvent": "A specific event from your event source",
+    "configurations": [
+      {
+        "name": "enter api",
+        "type": "text",
+        "hintText": "optional hint text ",
+        "toolTip": "optional tooltip",
+        "optionalField": false,
+        "placeHolder": "placeholder",
+        "dataSet": "data set",
+        "category": "Select the category of data you want to see in this field .",
+        "metrics": "don't know what this is",
+        "sort": false,
+        "characterLimit": "50",
+
+        "show": true,
+        "matchCondition": "boolean based on this we will decide AND or OR operator",
+        "conditions": [
+          {
+            "fieldName": "name of the field to which this condition will apply to ",
+            "fieldState": "state of the field ",
+            "fieldValue": "value of the field which will match "
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "account_id": 16630083,
+    "created_at": "2023-10-02T06:49:34+00:00",
+    "current_version": null,
+    "customuser_id": 16630602,
+    "deleted_at": null,
+    "description": "",
+    "draft": {
+      "created_at": "2023-10-02T06:50:14.030749+00:00",
+      "last_updated_by_customuser_id": 16630602,
+      "updated_at": "2023-10-02T08:29:56+00:00",
+      "zap_id": "209498666",
+      "zap_note": "",
+      "zdl": {
+        "app": "EngineAPI",
+        "type": "run",
+        "action": "series_skip_errors",
+        "id": "series_209498666",
+        "steps": [
+          {
+            "id": "209498666",
+            "app": "GitHubAPI",
+            "type": "read",
+            "action": "branch",
+            "params": {
+              "repo": "hemangChadhry25/blend2"
+            },
+            "meta": {
+              "$editor": {
+                "has_automatic_issues": false
+              },
+              "params": {
+                "repo": {
+                  "label": "hemangChadhry25/blend2"
+                }
+              }
+            },
+            "authentication_id": 42131857
+          },
+          {
+            "type": "write",
+            "app": "GoogleMailV2API",
+            "action": "message",
+            "id": "_GEN_1696230066277",
+            "authentication_id": 42130809,
+            "params": {
+              "body_type": "plain",
+              "to": ["hemang.chaudhry@jaiinfoway.com"],
+              "from": "hemangchaudhry@gmail.com",
+              "from_name": "hemang",
+              "subject": "this is a new subject",
+              "body": "{{209498666__name}}"
+            },
+            "meta": {
+              "params": {
+                "from": {
+                  "label": "hemangchaudhry@gmail.com"
+                }
+              },
+              "$editor": {
+                "has_automatic_issues": true
+              }
+            }
+          }
+        ],
+        "zdl_version": "0.4",
+        "title": "Untitled Zap"
+      }
+    },
+    "edit_mode": null,
+    "execution_engine": null,
+    "folder_id": null,
+    "id": "209498666",
+    "is_enabled": false,
+    "kind": "workflow",
+    "last_disabled_at": null,
+    "last_enabled_at": null,
+    "last_updated_by_customuser_id": null,
+    "legacy_node_id": null,
+    "source_url": null,
+    "title": "Untitled Zap",
+    "updated_at": "2023-10-02T08:29:56+00:00"
+  },
+  {
+    "version": "1.0.0",
+    "platformVersion": "15.3.0",
+    "triggers": {
+      "hemang": {
+        "operation": {
+          "perform": {
+            "body": {
+              "email": "hemang.chaudhry@jaiinfoway.com",
+              "otp": "203446"
+            },
+            "headers": {
+              "Accept": "application/json",
+              "X-EMAIL": "{{bundle.authData.email}}",
+              "X-OTP": "{{bundle.authData.otp}}"
+            },
+            "method": "POST",
+            "params": {
+              "email": "{{bundle.authData.email}}",
+              "otp": "{{bundle.authData.otp}}"
+            },
+            "url": "https://pms.jaiinfoway.com/signin"
+          },
+          "type": "polling"
+        },
+        "display": {
+          "description": "testing description testing description testing description testing description",
+          "hidden": false,
+          "label": "hemang"
+        },
+        "key": "hemang",
+        "noun": "hemang"
+      },
+      "micro": {
+        "operation": {
+          "perform": {
+            "headers": {
+              "Accept": "application/json"
+            },
+            "method": "POST",
+            "params": {
+              "email": "{{bundle.inputData.email}}",
+              "name": "{{bundle.inputData.name}}"
+            },
+            "url": "https://www.sso.jkyog.org/api/v1/user/getUsers"
+          },
+          "inputFields": [
+            {
+              "key": "email",
+              "type": "string",
+              "label": "email",
+              "helpText": "enter your email enter your emailenter your emailenter your emailenter your emailenter your email",
+              "required": true,
+              "list": false,
+              "altersDynamicFields": false
+            },
+            {
+              "key": "name",
+              "type": "string",
+              "label": "name",
+              "helpText": "please enter your name here please enter your name here",
+              "required": true,
+              "list": false,
+              "altersDynamicFields": false
+            }
+          ],
+          "type": "polling"
+        },
+        "display": {
+          "description": "this is this is this is this is this is this is this is this is ",
+          "hidden": false,
+          "label": "micro"
+        },
+        "key": "micro",
+        "noun": "micro"
+      }
+    },
+    "authentication": {
+      "type": "custom",
+      "test": {
+        "body": {
+          "email": "hemang.chaudhry@jaiinfoway.com",
+          "otp": "964124"
+        },
+        "headers": {
+          "X-EMAIL": "{{bundle.authData.email}}",
+          "X-OTP": "{{bundle.authData.otp}}"
+        },
+        "method": "POST",
+        "params": {
+          "otp": "{{bundle.authData.otp}}",
+          "email": "{{bundle.authData.email}}"
+        },
+        "url": "https://www.sso.jkyog.org/api/v1/signin/verify_otp"
+      },
+      "fields": [
+        {
+          "computed": false,
+          "key": "email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "computed": false,
+          "key": "otp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "customConfig": {}
+    }
+  }
+]
+
+{"url":" https://pms.jaiinfoway.com/api/v1/project/user?accessToken=sgwhgwrh"}}
+
+// so api key is basically the the url parameter that the step will use in the trigger or action 
+// when they click on connect they will provide the key and for every request the key will be send in the url parameter
+
+// in triggers whatever data entered by the user will be sent in the url paramere along with the key
+
+// so when defining the integration we will define the type in the integration that it is apiKey
+// when we click on the connect we will call a api with the id of the integration the integration id is saved in the trigger and actions
+// the api will call a lamda function which will fetch the integration and checks the input fields and return to the i frame the i frame will then show those input fields dynamically mostly they will be of type string and password
+// the api key entered by the user we have to save it somewhere in the database so that when we specify the key the api can know which user is this basically to identify the user
+// if it is a trigger we will send the values of the input and and the key in the url parameter
+// in case of action if the method is get the values will go in the url parameters if it is post it will go in the body
+
+// when we create events for action we have to specify get or post method for triggers it will always be get
+
+{
+    "id": 42203620,
+    "title": "tl;dv",
+    "label": null,
+    "identifier": null,
+    "selected_api": "TlDvCLIAPI@1.1.0",
+    "destination_selected_api": null,
+    "date": "2023-10-05T09:16:25.084761+00:00",
+    "lastchanged": "2023-10-05T09:16:25.084807+00:00",
+    "timesince": "0\u00a0minutes",
+    "is_invite_only": false,
+    "is_private": false,
+    "is_shared": false,
+    "is_stale": false,
+    "zap_count": null,
+    "owner_id": 16630602
+}
+
+// while creating integration there should be a input where the user will test the the api key 
+// so in integration save test url and method
+
+https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?access_type=offline&approval_prompt=force&client_id=927538837578.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fzapier.com%2Fdashboard%2Fauth%2Foauth%2Freturn%2FGoogleMailV2API%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.compose%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify%20email&service=lso&o2v=1&theme=glif&flowName=GeneralOAuthFlow

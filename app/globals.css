@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.about {
+
+    opacity: 0;
+    filter: blur(4px);
+}
+
+.about {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* .ScrollbarsCustom-ThumbY ,
+.ScrollbarsCustom-Thumb::-webkit-scrollbar,
+.trackYVisible::-webkit-scrollbar{
+    width: 5px !important;
+    color: green;
+      
+        background: #1e4e28 !important; 
+        position: absolute !important;
+        left: 0 !important;
+}
+  ::-webkit-scrollbar-track {
+      background: rgb(216, 42, 231);
+      border-radius: 5px;
+  } */
+.transform-component-module_wrapper__SPB86 {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ScrollbarsCustom-Track .ScrollbarsCustom-TrackX {
+    background: #1b2c44 !important;
+    /* bottom: 15px !important; */
+    position: fixed !important;
+    scroll-behavior: smooth
+}
+/* ScrollbarsCustom-Track ScrollbarsCustom-TrackX */
+
+
+.ScrollbarsCustom-ThumbY {
+    background: #e8eaed !important;
+    scroll-behavior: smooth
+}
+
+.ScrollbarsCustom-ThumbX {
+    background: #1a56b1 !important;
+    scroll-behavior: smooth
+}
+
+
+/* ::-webkit-scrollbar {
+    visibility: hidden
+} */
+
+.scroll-active .ScrollbarsCustom-ThumbY, .scroll-active .ScrollbarsCustom-ThumbX {
+    background: rgba(255, 255, 255, 0.1) !important;
+    scroll-behavior: smooth
+}
+
+.right-scroll .ScrollbarsCustom-ThumbY,
+.left-scroll .ScrollbarsCustom-ThumbX {
+    background: rgba(255, 255, 255, 0.1) !important;
+    scroll-behavior: smooth
+}
+
+.pdl {
+    padding-left: 2.3rem !important;
+}
+
+@media (max-width:1300px) {
+    .canvasHeight {
+        height: 90vh;
+    }
+}
+
+@media (max-width:1200px) {
+    .canvasHeight {
+        height: 85vh;
+    }
+}
+
+.canvasHeight {
+    height: 90vh;
+}
+
+.ScrollbarsCustom-Track {
+    background: rgba(255, 255, 255, 0.1) !important;
+    scroll-behavior: smooth
+    /* bottom: 11px !important; */
+}
+
+.ScrollbarsCustom-Track.ScrollbarsCustom-TrackX{
+position: fixed !important;
+scroll-behavior: smooth
+}
+
+.ScrollbarsCustom-ThumbY  {
+    background: #e8eaed !important;
+    scroll-behavior: smooth
+}
+
+.ScrollbarsCustom-ThumbX{
+background: #d0d1d2 !important;
+scroll-behavior: smooth
+}
+
+.workflow .ScrollbarsCustom-Track.ScrollbarsCustom-TrackY{
+  display: none !important;
+  width: 0px !important;
+  border-radius: 0px solid grey !important;
+}
+
+.workflow .ScrollbarsCustom-Wrapper{
+    inset: 0px 2px 0px 2px !important
+}
+
+.navheight{
+    height:70px;
+}
+.tops{
+    top:70px;
+}
+
+.timepicker input[type=time]::-webkit-calendar-picker-indicator {
+    filter: invert(4%) sepia(13%) saturate(2%) hue-rotate(130deg) brightness(80%) contrast(10%);
+}
+/* 
+.timepicker input[type="time"]:before {
+    content: 'Select time';
+    color: rgb(152 162 179 );
+    position: absolute;
+    background: #fff;
+    width: 77px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.timepicker input[type="time"]:focus:before {
+    width: 0;
+    content: '';
+} */
+
+.popCalender{
+    top:-70px 
+}
+
+@media (max-width:1300px) {
+.navheight {
+        height: 55px;
+    }
+    .tops{
+        top:55px;
+        
+    }
+        
+}
+
+@media (max-height: 800px) {
+    .popCalender {
+            top: 200px !important;
+        }
+}

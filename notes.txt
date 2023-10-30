@@ -1,0 +1,42 @@
+in the database change the redirect url to the slug 
+sync (err, data) => {
+      if (err) {
+        console.log("Error", err);
+      } else {
+        const integration = data.Item;
+        const tokenEndpoint = integration.accessTokenRequest;
+
+        const clientId = integration.clientId;
+        const clientSecret = integration.clientSecret;
+        const redirectUri = integration.redirectUrl;
+        const authorizationCode = code;
+
+        const requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `grant_type=authorization_code&code=${authorizationCode}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${redirectUri}`,
+        };
+
+        console.log(tokenEndpoint);
+        const response = await axios.post(
+          tokenEndpoint,
+          {
+            grant_type: "authorization_code",
+            code: code,
+            client_id: clientId,
+            client_secret: clientSecret,
+            redirect_uri: redirectUri,
+          },
+          requestOptions.headers
+        );
+
+        console.log("this is response", response);
+        console.log("this is response", response);
+        console.log("this is response", response);
+        console.log("this is response", response);
+        console.log("this is response", response);
+        console.log("this is response", response);
+      }
+    }
